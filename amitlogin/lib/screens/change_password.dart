@@ -1,4 +1,4 @@
-import 'package:amitlogin/widgets/sign_in_button.dart';
+import 'package:amitlogin/widgets/sec_signin.dart';
 import 'package:flutter/material.dart';
 
 class PasswordChangeScreen extends StatelessWidget {
@@ -18,7 +18,7 @@ class PasswordChangeScreen extends StatelessWidget {
                 height: height * .5,
                 width: double.infinity,
                 decoration: const BoxDecoration(
-                  color: Colors.purple,
+                  color: Colors.deepPurple,
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(10),
                     bottomRight: Radius.circular(10),
@@ -47,16 +47,16 @@ class PasswordChangeScreen extends StatelessWidget {
                   child: Column(
                     children: [
                       Text("Password Changed" , style: TextStyle(
-                        color: Colors.purple,
+                        color: Colors.deepPurple,
                         fontWeight: FontWeight.bold,
                         fontSize: 25
                       ),),
                       Text("Congratulations! You've successfully"),
                       Text("chnaged your passowrd"),
-                      Expanded(child: Icon(Icons.check_circle_rounded , size: 180, color: Colors.purple,)),
-                        SignInButton(
+                      Expanded(child: Icon(Icons.check_circle_rounded , size: 180, color: Colors.deepPurple,)),
+                        SecSignIn(
                         text: "Back to Login",
-                        mycolor: Colors.purple,
+                        mycolor: Colors.deepPurple,
                         textcolor: Colors.white,
                       ),
                     ],

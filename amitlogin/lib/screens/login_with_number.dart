@@ -1,10 +1,9 @@
-import 'package:amitlogin/widgets/sign_in_button.dart';
-import 'package:amitlogin/widgets/sign_in_icons.dart';
-import 'package:amitlogin/widgets/textfield.dart';
+import 'package:amitlogin/widgets/dot_container.dart';
+import 'package:amitlogin/widgets/sec_signin.dart';
 import 'package:flutter/material.dart';
 
 class LoginWithNumber extends StatelessWidget {
-  const LoginWithNumber({Key? key});
+  const LoginWithNumber({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +19,7 @@ class LoginWithNumber extends StatelessWidget {
                 height: height * .5,
                 width: double.infinity,
                 decoration: const BoxDecoration(
-                  color: Colors.purple,
+                  color: Colors.deepPurple,
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(10),
                     bottomRight: Radius.circular(10),
@@ -42,41 +41,81 @@ class LoginWithNumber extends StatelessWidget {
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(20),
                 ),
-                height: height * 0.32,
+                height: height * 0.25,
                 width: width * 0.9,
                 child: Padding(
-                  padding: EdgeInsets.all(20.0),
+                  padding:const EdgeInsets.all(20.0),
                   child: Column(
                     children: [
-                      Expanded(
-                        flex: 1,
-                        child: Column(
-                          children: [
-                            MyTextField(
-                              icon: Icon(Icons.account_box_outlined),
-                              title: 'Full Name',
-                            ),
-                            SizedBox(height: 20),
-                            MyTextField(
-                              icon: Icon(Icons.account_box_outlined),
-                              title: 'Full Name',
-                            ),
-                            SizedBox(height: 20),
-                          ],
-                        ),
+                      const Column(
+                        children: [
+                          SizedBox(height: 10),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              DotContainer(),
+                              DotContainer(),
+                              DotContainer(),
+                              DotContainer(),
+                              DotContainer(),
+                              DotContainer(),
+                            ],
+                          ),
+                          SizedBox(height: 15),
+                        ],
                       ),
-                      SignInButton(
+                      const SecSignIn(
                         text: "Recover Password",
-                        mycolor: Colors.purple,
+                        mycolor: Colors.deepPurple,
                         textcolor: Colors.white,
                       ),
-                      SizedBox(
-                        height: 10,
-                      ),
+                      const SizedBox(height: 11),
+                         RichText(
+                          text: const TextSpan(
+                            children: [
+                              TextSpan(
+                                text: 'Not received Code? ',
+                                style: TextStyle(color: Colors.black),
+                              ),
+                              TextSpan(
+                                text: 'Resend',
+                                style: TextStyle(
+                                    color: Colors.deepPurple,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                        )
                     ],
                   ),
                 ),
               ),
+            ),
+          ),
+          Positioned(
+            top: height * 0.14,
+            left: height * 0.035,
+            right: 0,
+            child: const Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Enter OTP",
+                  style: TextStyle(
+                      fontSize: 25,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold),
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                Text(
+                  "Please enter 6 digit Code sent to your registered\nmobile number xxx xxx 6124",
+                  style: TextStyle(color: Colors.white),
+                )
+              ],
             ),
           ),
         ],

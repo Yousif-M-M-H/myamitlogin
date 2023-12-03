@@ -1,6 +1,5 @@
-import 'package:amitlogin/screens/change_password.dart';
+import 'package:amitlogin/screens/homepage.dart';
 import 'package:flutter/material.dart';
-
 void main() {
   runApp(const MyApp());
 }
@@ -8,7 +7,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,7 +15,16 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const PasswordChangeScreen(),
+      home: const MyHomePage(),
     );
   }
 }
+
+// other pages names
+
+// SignUpScreen()
+// SignInScreen()
+// RecoverPassword()
+// LoginWithNumberScreen()
+// LoginWithNumber()
+// PasswordChangeScreen()

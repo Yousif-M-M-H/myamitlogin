@@ -1,4 +1,4 @@
-import 'package:amitlogin/widgets/sign_in_button.dart';
+import 'package:amitlogin/widgets/sec_signin.dart';
 import 'package:amitlogin/widgets/sign_in_icons.dart';
 import 'package:flutter/material.dart';
 
@@ -16,8 +16,8 @@ class MyHomePage extends StatelessWidget {
             children: [
               Container(
                 height: height * .5,
-                decoration: BoxDecoration(
-                    color: Colors.purple,
+                decoration: const BoxDecoration(
+                    color: Colors.deepPurple,
                     borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(10),
                         bottomRight: Radius.circular(10))),
@@ -28,11 +28,13 @@ class MyHomePage extends StatelessWidget {
               ),
             ],
           ),
-          Align(
-            alignment: Alignment.center,
+          Positioned(
+              top: MediaQuery.of(context).size.height * 0.3,
+            left: 0,
+            right: 0,
             child: Padding(
               padding: const EdgeInsets.only(
-                  top: 50.0), // Adjust the top padding as needed
+                  top: 50.0 , right: 20 , left: 20), 
               child: Container(
                 decoration: BoxDecoration(
                 color: Colors.white,
@@ -40,8 +42,8 @@ class MyHomePage extends StatelessWidget {
                 ),
                 height: height * 0.4,
                 width: width * 0.9,
-                child: Padding(
-                  padding: const EdgeInsets.all(20.0),
+                child: const Padding(
+                  padding:  EdgeInsets.all(20.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -61,17 +63,16 @@ class MyHomePage extends StatelessWidget {
                           ],
                         ),
                       ),
-                      // SizedBox(height: 20),
-                      SignInButton(
+                      SecSignIn(
                         text: "Sign in",
-                        mycolor: Colors.purple,
+                        mycolor: Colors.deepPurple,
                         textcolor: Colors.white,
                       ),
                       SizedBox(height: 10),
-                      SignInButton(
+                      SecSignIn(
                         text: "Sign up",
                         mycolor: Colors.white,
-                        textcolor: Colors.purple,
+                        textcolor: Colors.deepPurple,
                       ),
                       SizedBox(
                         height: 20,
@@ -80,13 +81,13 @@ class MyHomePage extends StatelessWidget {
                         children: <Widget>[
                           Expanded(
                               child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 8),
+                            padding:  EdgeInsets.symmetric(horizontal: 8),
                             child: Divider(),
                           )),
                           Text("  Or connect using  "),
                           Expanded(
                               child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 8),
+                            padding:  EdgeInsets.symmetric(horizontal: 8),
                             child: Divider(),
                           )),
                         ],
@@ -111,7 +112,7 @@ class MyHomePage extends StatelessWidget {
                             SizedBox(width: 10),
                             SignInIcon(
                                 icon: Icons.view_in_ar_outlined,
-                                color: Colors.purple),
+                                color: Colors.deepPurple),
                           ],
                         ),
                       ),
@@ -119,6 +120,29 @@ class MyHomePage extends StatelessWidget {
                   ),
                 ),
               ),
+            ),
+          ),
+            Positioned(
+            top: MediaQuery.of(context).size.height * 0.2,
+            left: 0,
+            right: 0,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: 100,
+                  height: 70,
+
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20)
+                  ),
+                  child: const Icon(Icons.facebook, size: 50 , color: Colors.deepPurple,)), 
+              const   Text(
+                  "App Icon",
+                  style:  TextStyle(fontSize: 20 , color: Colors.white , fontWeight: FontWeight.bold),
+                ),
+              ],
             ),
           ),
           Positioned(
@@ -129,7 +153,7 @@ class MyHomePage extends StatelessWidget {
               widthFactor: 1.0,
               child: Container(
                 alignment: Alignment.center,
-                child: Text(
+                child: const Text(
                   "SKIP",
                   style: TextStyle(fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center,

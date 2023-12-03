@@ -1,10 +1,11 @@
+import 'package:amitlogin/widgets/dot_container.dart';
 import 'package:amitlogin/widgets/sec_signin.dart';
 import 'package:amitlogin/widgets/sign_in_icons.dart';
 import 'package:amitlogin/widgets/textfield.dart';
 import 'package:flutter/material.dart';
 
-class SignInScreen extends StatelessWidget {
-  const SignInScreen({super.key});
+class LoginWithNumberScreen extends StatelessWidget {
+  const LoginWithNumberScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -42,35 +43,61 @@ class SignInScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20)),
                 height: height * 0.35,
                 width: width * 0.9,
-                child: const Padding(
-                    padding: EdgeInsets.all(20.0),
+                child: Padding(
+                    padding: const EdgeInsets.all(20.0),
                     child: Column(
                       children: [
-                        Expanded(
-                            flex: 1,
-                            child: Column(
+                        const Column(
+                          children: [
+                            MyTextField(
+                                icon: Icon(Icons.phone_android_sharp),
+                                title: 'Enter mobile number'),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                MyTextField(
-                                    icon: Icon(Icons.email), title: 'Email'),
-                                SizedBox(
-                                  height: 15,
-                                ),
-                                MyTextField(
-                                    icon: Icon(Icons.lock_outlined),
-                                    title: 'password')
+                                DotContainer(),
+                                DotContainer(),
+                                DotContainer(),
+                                DotContainer(),
+                                DotContainer(),
+                                DotContainer(),
                               ],
-                            )),
-                        SecSignIn(
-                          text: "Sign in",
+                            ),
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        const SecSignIn(
+                          text: "Next",
                           mycolor: Colors.deepPurple,
                           textcolor: Colors.white,
                         ),
-                        SizedBox(height: 5,),
-                        Text(
-                          "Forgot Password?",
-                          style: TextStyle(
-                              color: Colors.deepPurple,
-                              fontWeight: FontWeight.bold),
+                        const SizedBox(
+                          height: 5,
+                        ),
+                        const SizedBox(
+                          height: 5,
+                        ),
+                        RichText(
+                          text: const TextSpan(
+                            children: [
+                              TextSpan(
+                                text: 'Not received Code? ',
+                                style: TextStyle(color: Colors.black),
+                              ),
+                              TextSpan(
+                                text: 'Resend',
+                                style: TextStyle(
+                                    color: Colors.deepPurple,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
                         )
                       ],
                     )),
@@ -85,7 +112,7 @@ class SignInScreen extends StatelessWidget {
               children: [
                 Expanded(
                     child: Padding(
-                  padding:  EdgeInsets.symmetric(horizontal: 20),
+                  padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Divider(),
                 )),
                 Text("Or Connect Using"),
@@ -129,7 +156,7 @@ class SignInScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Sign In",
+                  "Login with number",
                   style: TextStyle(
                       fontSize: 25,
                       color: Colors.white,
@@ -139,7 +166,7 @@ class SignInScreen extends StatelessWidget {
                   height: 15,
                 ),
                 Text(
-                  "Sign in to discover amazing things near\n around you",
+                  "Your number will safe with us. We won't share\nyour details with anyone",
                   style: TextStyle(color: Colors.white),
                 )
               ],

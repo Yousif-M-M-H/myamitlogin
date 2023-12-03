@@ -15,7 +15,7 @@ class SignInIcon extends StatelessWidget {
         child: Icon(
           icon
           ,
-          color: Colors.white, // Set the color directly within the Icon widget
+          color: Colors.white, 
         ),
       ),
     );
